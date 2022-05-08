@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<p>Home page</p>
+	<form action='/connect' method="post">
+		<p>Ip Address: </p>
+		<p><input type="text" name="ip" /></p>
+		<p><input type="submit" value="Connect" /></p>
+	</form>
+	{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+
+                <form action='/send' method="post">
+                	<p>Topic: </p>
+					<p><input type="text" name="topic" /></p>
+					<p>Meeting Link: </p>
+					<p><input type="text" name="meetLink" /></p>
+					<p>Time: </p>
+					<p><input type="text" name="time" /></p>
+					<p>Aspace: </p>
+					<p><input type="text" name="aspace" /></p>
+					<p>Sign: </p>
+					<p><input type="text" name="sign" /></p>
+					<p>Message: </p>
+					<p><input type="text" name="message" /></p>
+					<p>Ip Address: </p>
+					<p><input type="text" name="ip" /></p>
+					<p><input type="submit" value="Send" /></p>
+				</form>
+			    {% endfor %}
+            {% endif %}
+        {% endwith %} 
+
+</body>
+</html>
